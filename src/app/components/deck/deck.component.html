@@ -1,0 +1,26 @@
+<div>
+    <table>
+        <tr>
+            <td>
+                No. of Decks:
+            </td>
+            <td>
+                <select #noOfDecks>
+                    <option 
+                        *ngFor="let num of numberArr" 
+                        [value]="num"
+                        >{{ num }}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button 
+                type="button" 
+                (click)="createDeck(+noOfDecks.value)"
+                >Create</button>
+            </td>
+        </tr>
+    </table>
+</div>

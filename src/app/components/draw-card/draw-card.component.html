@@ -1,0 +1,31 @@
+<div *ngIf="deckId">
+    <h1>Deck: {{ deckId }}</h1>
+    <table>
+        <tr>
+            <td>
+                <button type="button" (click)="drawFromDeck(+noOfCards.value)">Draw</button>
+            </td>
+            <td>
+                <select #noOfCards>
+                    <option 
+                        *ngFor="let num of numberArr" 
+                        [value]="num"
+                        >{{ num }}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Remaining cards: </td>
+            <td>
+                {{ remainingCards }}
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="cardArr.length > 0">
+    <span *ngFor="let card of cardArr">
+        <img [src]="card">
+        &nbsp;
+    </span>
+</div>
